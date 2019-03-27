@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+// 4장 예제
+// 예제 4-21
+// console.log("예제 4-21");
+// function func(arg1, arg2) {
+//     console.log(arg1, arg2);
+// }
+// func();
+// func(1);
+// func(1,2);
+// func(1,2,3);
+
+// 예제 4-22
+// console.log("예제 4-22");
+// function add(a,b) {
+//     // arguments 객체 출력
+//     console.dir(arguments);
+//     return a+b;
+// }
+// console.log(add(1));
+// console.log(add(1,2));
+// console.log(add(1,2,3));
+
+// // 매개변수 선언 없이 활용하는 법..
+// function sum() {
+//     var result = 0;
+//     for(var i=0; i<arguments.length; i++){
+//         result += arguments[i];
+//     }
+//     return result;
+// }
+// console.log(sum(1,2,3));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
+
+// 예제 4-23
+// console.log("예제 4-23");
+// var myObject = {
+//     name : 'foo',
+//     sayName : function() {
+//         console.log(this.name);
+//     }
+// };
+// var otherObject = {
+//     name : 'bar'
+// };
+// otherObject.sayName = myObject.sayName;
+// myObject.sayName();     // foo
+// otherObject.sayName();  // bar
+
+
+
+// // 예제 4-24
+// console.log("예제 4-24");
+// var foo = "I'm foo";
+// console.log(foo);
+// console.log(window.foo);
+
+// 예제 4-25
+// console.log("예제 4-25");
+// var test = "This is test";
+// console.log(window.test);   // This is test
+// var sayFoo = function() {
+//     console.log(this.test);
+// };
+// sayFoo();                   // This is test  
+
+// // 예제 4-26 
+// console.log("예제 4-26");
+// var value = 100;
+// var myObject = {
+//     value : 1,
+//     func1 : function() {
+//         this.value += 1;
+//         console.log('func1() called. this.value : ' + this.value);
+    
+//         func2 = function() {
+//             this.value += 1;
+//             console.log('func2() called. this.value : ' + this.value);
+            
+//             func3 = function() {
+//                 this.value += 1;
+//                 console.log('func3() called. this.value : ' + this.value);
+//             }
+
+//             func3();
+//         }
+
+//         func2();
+//     }
+// };
+// myObject.func1();
+
+// // 예제 4-27
+// console.log("예제 4-27");
+// var value = 100;
+// var myObject = {
+//     value : 1,
+//     func1 : function() {
+//         var that = this;
+//         this.value += 1;
+//         console.log('func1() called. this.value : ' + this.value);
+//         func2 = function() {
+//             that.value += 1;
+//             console.log('func2() called. this.value : ' + that.value);
+//             func3 = function() {
+//                 that.value += 1;
+//                 console.log('func3() called. this.value : ' + that.value);
+//             }
+//             func3();
+//         }
+//         func2();
+//     }
+// };
+// myObject.func1();
+
+// // 예제 4-28
+// console.log("예제 4-28");
+// var Person = function(name) {
+//     this.name = name;
+// }
+// var foo1 = new Person('foo');
+// console.log(foo1.name); 
+// console.dir(foo1);
+
+// 예제 4-29
+// console.log("예제 4-29");
+// var foo = {
+//     name : 'foo',
+//     age : 35,
+//     gender : 'man'
+// };
+// console.dir(foo);
+// function Person(name, age, gender, position) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+// }
+// var bar = new Person('bar', 33, 'woman');
+// console.dir(bar);
+// var baz = new Person('baz', 25, 'woman');
+// console.dir(baz);
+
+// function A(arg) {
+//     if(!(this instanceof A)) {
+//         return new A(arg);
+//     }
+//     this.value = arg ? arg : 0;
+// }
+// var a = new A(100);
+// var b = A(10);
+// console.log(a.value);       // 100
+// console.log(b.value);       // 10
+// console.log(window.value);  // undefined
+
+// 예제 4-30
+// console.log("예제 4-30");
+// var qux = Person('qux', 20, 'man');
+// console.log(qux);
+// console.log(window.name);
+// console.log(window.age);
+// console.log(window.gender);
+
+// 예제 4-31
+// console.log("예제 4-31");
+// function Person(name, age, gender) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+// }
+// var foo = {};
+// Person.apply(foo, ['foo', 30, 'man']);
+// //Person.call(foo, 'foo', 30, 'man');
+// console.dir(foo);
+
+// 예제 4-32
+// console.log("예제 4-32");
+// function myFunction() {
+//     console.dir(arguments);
+//     //arguments.shift();
+//     var args = Array.prototype.slice.apply(arguments);
+//     console.dir(args);
+// }
+// myFunction(1,2,3);
+
+// 예제 4-33
+// console.log("예제 4-33");
+// var arrA = [1,2,3];
+// var arrB = arrA.slice(0);
+// var arrC = arrA.slice();
+// var arrD = arrA.slice(1);
+// var arrE = arrA.slice(1,2);
+
+// 예제 4-34
+// console.log("예제 4-34");
+// var noReturnFunc = function() {
+//     console.log('this function has no return statement.');
+// };
+
+// var result = noReturnFunc();
+// console.log(result);
+
+// 예제 4-35
+// console.log("예제 4-35");
+// function Person(name, age, gender) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+
+//     return {name : 'bar', age : 20, gender : 'woman'};
+// }
+
+// var foo = new Person('foo', 30, 'man');
+// console.dir(foo);
+
+// 예제 4-36
+// console.log("예제 4-36");
+// function Person(name, age, gender) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+    
+//     return 100;
+// }
+// var foo = new Person('foo', 30, 'man');
+// console.log(foo);
+
+// 예제 4-37
+// console.log("예제 4-37");
+// function Person(name) {
+//     this.name = name;
+// }
+// var foo = new Person('foo');
+// console.dir(Person);
+// console.dir(foo);
+
+// 예제 4-38
+// console.log("예제 4-38");
+// var myObject = {
+//     name : 'foo',
+//     sayName : function() {
+//         console.log('My Name is ' + this.name);
+//     }
+// };
+// myObject.sayName();
+// console.log(myObject.hasOwnProperty('name'));
+// console.log(myObject.hasOwnProperty('nickName'));
+// myObject.sayNickName();
+
+// 예제 4-39
+// console.log("예제 4-39");
+// function Person(name, age, hobby) {
+//     this.name = name;
+//     this.age = age;
+//     this.hobby = hobby;
+// }
+// var foo = new Person('foo', 30, 'tennis');
+// console.log(foo.hasOwnProperty('name'));
+// console.dir(Person.prototype);
+
+// 예제 4-40
+// console.log("예제 4-40");
+// String.prototype.testMethod = function() {
+//     console.log('This is the String.prototype.testMethod()');
+// };
+// var str = "this is test";
+// str.testMethod();
+// console.dir(String.prototype);
+
+// 예제 4-41
+// console.log("예제 4-41");
+// function Person(name) {
+//     this.name = name;
+// }
+// var foo = new Person('foo');
+// //foo.sayHello();
+// Person.prototype.sayHello = function() {
+//     console.log('Hello');
+// }
+// foo.sayHello();
+
+// 예제 4-42
+// console.log("예제 4-42");
+// function Person(name) {
+//     this.name = name;
+// }
+// Person.prototype.getName = function() {
+//     return this.name;
+// }
+// var foo = new Person('foo');
+// console.log(foo.getName());              // foo
+// Person.prototype.name = 'person';
+// console.log(Person.prototype.getName()); // person
+
+// 예제 4-43
+// console.log("예제 4-43");
+function Person(name) {
+    this.name = name;
+}
+console.log(Person.prototype.constructor);
+var foo = new Person('foo');
+console.log(foo.country);
+Person.prototype = {
+    country : 'korea'
+};
+console.log(Person.prototype.constructor);
+var bar = new Person('bar');
+console.log(foo.country);
+console.log(bar.country);
+console.log(foo.constructor);
+console.log(bar.constructor);
+
+// 예제 4-44
+// console.log("예제 4-44");
+// function Person(name) {
+//     this.name = name;
+// }
+// Person.prototype.country = 'Korea';
+// var foo = new Person('foo');
+// var bar = new Person('bar');
+// console.log(foo.country);
+// console.log(bar.country);
+// foo.country = 'USA';
+// console.log(foo.country);
+// console.log(bar.country);
+</script>

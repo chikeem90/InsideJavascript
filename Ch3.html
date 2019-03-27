@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+// 3장 예제
+// 예제 3-1
+console.log('예제 3-1');
+var intNum = 10;
+var floatNum = 0.1;
+
+var singleQuoteStr = 'single quote string';
+var doubleQuoteStr = "double quote string";
+var singleChar = 'a';
+
+var boolVar = true;
+
+var emptyVar;
+
+var nullVar = null;
+
+console.log(
+    typeof intNum,
+    typeof floatNum,
+    typeof singleQuoteStr,
+    typeof doubleQuoteStr,
+    typeof boolVar,
+    typeof nullVar,
+    typeof emptyVar
+);
+
+// 예제 3-2
+console.log('예제 3-2');
+var num = 5 / 2;
+console.log(num);
+console.log(Math.floor(num));
+
+// 예제 3-3
+console.log('예제 3-3');
+var str = 'test';
+console.log(str[0], str[1], str[2], str[3]);
+str[0] = 'T';
+console.log(str);
+
+// 예제 3-4
+console.log('예제 3-4');
+var nullVar = null;
+console.log(typeof nullVar === null);
+console.log(nullVar === null);
+
+// 예제 3-5
+console.log('예제 3-5');
+var foo1 = new Object();
+foo1.name = 'foo';
+foo1.age = 30;
+foo1.gender = 'male';
+console.log(typeof foo1);
+console.log(foo1);
+
+// 예제 3-6
+console.log('예제 3-6');
+var foo2 = {
+    name : 'foo',
+    age : 30,
+    gender : 'male'
+};
+console.log(typeof foo2);
+console.log(foo2);
+
+// 예제 3-7
+console.log('예제 3-7');
+var foo3 = {
+    name : 'foo',
+    major : 'computer science'
+};
+console.log(foo3.name);
+console.log(foo3['name']);
+console.log(foo3.nickname);
+
+foo3.major = 'electronics engineering';
+console.log(foo3.major);
+console.log(foo3['major']);
+
+foo3.age = 30;
+console.log(foo3.age);
+
+foo3['full-name'] = 'foo3 bar';
+console.log(foo3['full-name']);
+console.log(foo3.full-name);
+console.log(foo3.full);
+console.log(name);
+
+// 예제 3-8
+console.log('예제 3-8');
+var foo4 = {
+    name : 'foo',
+    age : 30,
+    major : 'computer science'
+};
+
+var prop;
+for (prop in foo4) {
+    console.log(prop, foo4[prop]);
+}
+
+var foo5 = {
+    name : 'foo',
+    nickname : 'babo'
+};
+
+console.log(foo5.nickname);
+delete foo5.nickname;
+console.log(foo5.nickname);
+
+delete foo5;
+console.log(foo5.name);
+
+// 예제 3-9
+console.log('예제 3-9');
+var objA = {
+    val : 40
+};
+var objB = objA;
+console.log(objA.val);
+console.log(objB.val);
+
+objB.val = 50;
+console.log(objA.val);
+console.log(objB.val);
+
+// 예제 3-10
+console.log('예제 3-10');
+var a = 100;
+var b = 100;
+var objA1 = {value : 100};
+var objB1 = {value : 100};
+var objC1 = objB1;
+
+console.log(a == b);
+console.log(objA1 == objB1);
+console.log(objB1 == objC1);
+
+// 예제 3-11
+console.log('예제 3-11');
+var a1 = 100;
+var objA2 = {value : 100};
+function changeArg(num, obj) {
+    num = 200;
+    obj.value = 200;
+    console.log(num);
+    console.log(obj);   
+}
+
+changeArg(a1, objA2);
+console.log(a1);
+console.log(objA2);
+
+// 예제 3-12
+console.log('예제 3-12');
+var foo6 = {
+    name : 'foo',
+    age : 30
+};
+
+console.log(foo6.toString());
+console.dir(foo6);
+
+// 예제 3-13
+console.log('예제 3-13');
+var colorArr = ['orange', 'yellow', 'blue', 'green', 'red'];
+console.log(colorArr[0]);
+console.log(colorArr[1]);
+console.log(colorArr[4]);
+
+// 예제 3-14
+console.log('예제 3-14');
+var emptyArr = [];
+console.log(emptyArr[0]);
+
+emptyArr[0] = 100;
+emptyArr[3] = 'eight';
+emptyArr[7] = true;
+console.log(emptyArr);
+console.log(emptyArr.length);
+
+// 예제 3-15
+console.log('예제 3-15');
+var arr = [];
+console.log(arr.length);
+arr[0] = 0;
+arr[1] = 1;
+arr[2] = 2;
+arr[100] = 100;
+console.log(arr.length);
+
+// 예제 3-16
+console.log('예제 3-16');
+var arr2 = [0, 1, 2];
+console.log(arr2.length);
+
+arr2.length = 5;
+console.log(arr2);
+
+arr2.length = 2;
+console.log(arr2);
+console.log(arr2[2]);
+
+// 예제 3-17
+console.log('예제 3-17');
+var arr3 = ['zero', 'one', 'two'];
+arr3.push('three');
+console.log(arr3);
+
+arr3.length = 5;
+arr3.push('four');
+console.log(arr3);
+
+// 예제 3-18
+console.log('예제 3-18');
+var colorsArray = ['orange', 'yellow', 'green'];
+console.log(colorsArray[0]);
+console.log(colorsArray[1]);
+console.log(colorsArray[2]);
+
+var colorsObj = {
+    '0' : 'orange',
+    '1' : 'yellow',
+    '2' : 'green'
+};
+
+console.log(colorsObj[0]);
+console.log(colorsObj[1]);
+console.log(colorsObj[2]);
+
+console.log(typeof colorsArray);
+console.log(typeof colorsObj);
+
+console.log(colorsArray.length);
+console.log(colorsObj.length);
+
+colorsArray.push('red');
+//colorsObj.push('red'); -- 에러
+
+// 예제 3-19
+console.log('예제 3-19');
+var emptyArray = [];
+var emptyObj = {};
+
+console.dir(emptyArray.__proto__);
+console.dir(emptyObj.__proto__);
+
+// 예제 3-20
+console.log('예제 3-20');
+var arr4 = ['zero', 'one', 'two'];
+console.log(arr4.length);
+arr4.color = 'blue';
+arr4.name = 'number_array';
+console.log(arr4.length);
+arr4[3] = 'red';
+console.log(arr4.length);
+console.dir(arr4);
+
+// 예제 3-21
+console.log('예제 3-21');
+for (var prop in arr4) {
+    console.log(prop, arr4[prop]);
+}
+
+for (var i=0; i < arr4.length; i++) {
+    console.log(i, arr4[i]);
+}
+
+// 예제 3-22
+console.log('예제 3-22');
+var arr5 = ['zero', 'one', 'two', 'three'];
+delete arr5[2];
+console.log(arr5);
+console.log(arr5.length);
+
+// 예제 3-23
+console.log('예제 3-23');
+var arr6 = ['zero', 'one', 'two', 'three'];
+arr6.splice(2,1);
+console.log(arr6);
+console.log(arr6.length);
+
+// 예제 3-24
+console.log('예제 3-24');
+var foo7 = new Array(3);
+console.log(foo7);
+console.log(foo7.length);
+
+var bar = new Array(1,2,3);
+console.log(bar);
+console.log(bar.length);
+
+// 예제 3-25
+console.log('예제 3-25');
+var arr7 = ['bar'];
+var obj2 = {
+    name : 'foo',
+    length : 1
+}
+arr7.push('baz');
+console.log(arr7);
+//obj2.push('baz'); -- 에러
+
+// 예제 3-26
+console.log('예제 3-26');
+var arr8 = ['bar'];
+var obj3 = {
+    name : 'foo',
+    length : 1
+}
+arr8.push('baz');
+console.log(arr8);
+Array.prototype.push.apply(obj3, ['baz']); 
+console.log(obj3);
+
+// 예제 3-27
+console.log('예제 3-27');
+var num = 0.5;
+console.log(num.toExponential(1));
+console.log("test".charAt(2));
+
+// 예제 3-28
+console.log('예제 3-28');
+var add1 = 1 + 2;
+var add2 = 'my ' + 'string';
+var add3 = 1 + 'string';
+var add4 = 'string' + 2;
+console.log(add1);
+console.log(add2);
+console.log(add3);
+console.log(add4);
+
+// 예제 3-29
+console.log('예제 3-29');
+console.log(1 == '1');
+console.log(1 === '1');
+
+// 예제 3-30
+console.log('예제 3-30');
+console.log(!!0);        // false
+console.log(!!1);        // true
+console.log(!!'string'); // true
+console.log(!!'');       // false
+console.log(!!true);     // true
+console.log(!!false);    // false
+console.log(!!null);     // false
+console.log(!!undefined);// false
+console.log(!!{});       // true
+console.log(!![1,2,3]);  // true
+</script>
+
