@@ -8,5 +8,133 @@
 </body>
 </html>
 <script type="text/javascript">
+// console.log("예제 5-2");
+// function execute(param1, param2) {
+//     var a = 1, b = 2;
+//     function func() {
+//         return a+b;
+//     }
+//     return param1 + param2 + func();
+// }
+// execute(3,4);
 
+// console.log("예제 5-3");
+// var var1 = 1;
+// var var2 = 2;
+// console.log(var1);
+// console.log(var2);
+
+// console.log("예제 5-4");
+// var var1 = 1;
+// var var2 = 2;
+// function func() {
+//     var var1 = 10;
+//     var var2 = 20;
+//     console.log(var1);
+//     console.log(var2);
+// }
+// func();
+// console.log(var1);
+// console.log(var2);
+
+// console.log("예제 5-7");
+// function outerFunc() {
+//     var x = 10;
+//     var innerFunc = function() {
+//         console.log(x);
+//     }
+//     return innerFunc;
+// }
+// var inner = outerFunc();
+// inner();
+
+// console.log("예제 5-8");
+// function outerFunc(arg1, arg2) {
+//     var local = 8;
+//     function innerFunc(innerArg) {
+//         console.log((arg1 + arg2)/(innerArg + local));
+//     }
+//     return innerFunc;
+// }
+// var exam1 = outerFunc(2,4);
+// exam1(2);
+
+// console.log("예제 5-9");
+// function HelloFunc(func) {
+//     this.greeting = "hello";
+// }
+// HelloFunc.prototype.call = function(func) {
+//     func ? func(this.greeting) : this.func(this.greeting);
+// }
+// var UserFunc = function(greeting) {
+//     console.log(greeting);
+// }
+// var objHello = new HelloFunc();
+// objHello.func = UserFunc;
+// objHello.call();
+
+// console.log("예제 5-11");
+// var buffAr = [
+//     'I am ',
+//     '',
+//     '. I live in ',
+//     '',
+//     '. I am ',
+//     '',
+//     ' years old.'
+// ];
+// function getCompletedStr(name, city, age) {
+//     buffAr[1] = name;
+//     buffAr[3] = city;
+//     buffAr[5] = age;
+//     return buffAr.join('');
+// }
+// var str = getCompletedStr('zzoon', 'seoul', 16);
+// console.log(str);
+
+// console.log("예제 5-12");
+// var getCompletedStr = (function() {
+//     var buffAr = [
+//     'I am ',
+//     '',
+//     '. I live in ',
+//     '',
+//     '. I am ',
+//     '',
+//     ' years old.'
+//     ];
+//     return (function(name, city, age) {
+//         buffAr[1] = name;
+//         buffAr[3] = city;
+//         buffAr[5] = age;
+//         return buffAr.join('');
+//     });
+// })();
+// var str = getCompletedStr('zzoon', 'seoul', 16);
+// console.log(str);
+
+// console.log("예제 5-13");
+// function callLater(obj, a, b) {
+//     return (function(){
+//         obj["sum"] = a+b;
+//         console.log(obj["sum"]);
+//     });
+// }
+// var sumObj = {
+//     sum : 0
+// };
+// var func = callLater(sumObj, 1, 2);
+// setTimeout(func, 500);
+
+console.log("예제 5-14");
+function outerFunc(argNum) {
+    var num = argNum;
+    return function(x) {
+        num += x;
+        console.log('num : ' + num);
+    }
+}
+var exam = outerFunc(40);
+exam(5);
+exam(-10);
 </script>
